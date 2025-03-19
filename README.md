@@ -73,7 +73,7 @@ utils::install.packages(c("data.table","BiocManager","dplyr","stringr","tidyvers
 pacman::p_load(devtools,usethis)
 ```
 
-![Installing R packages](Screenshot1_PackageInstall.png)
+![image](https://github.com/user-attachments/assets/b7840876-3496-4305-962c-ae518ef2a705)
 
 
 ## C. Install PCDLPicasso R package
@@ -92,8 +92,7 @@ library(PCDLPicasso)
 If you get an error like this below, I can help you solve it.
 WARNING: Rtools is required to build R packages, but is not currently installed.
 
-
-![Installing PCDLPicasso packages](Screenshot2_InstallPCDLPicasso.png)
+![image](https://github.com/user-attachments/assets/a621a1f0-aeca-4903-823f-b55abb1e0d2e)
 
 
 ## D. Play with PCDLPicasso
@@ -106,7 +105,5 @@ In R console, run the command below.
 shiny::shinyApp(ui=PCDD_UserInterface, server=PCDD_Server)
 ```
 
-![PCDLPicasso ShinyApp - ClinicalData Tables](Screenshot3_PCDLPicassoTable.png)
-
-
-![PCDLPicasso ShinyApp - ClinicalData Piechart](Screenshot4_PCDLPicassoPiechart.png)
+![image](https://github.com/user-attachments/assets/6844effa-6692-467a-b81e-dafda5923aff)
+![image](https://github.com/user-attachments/assets/24e0ba4e-68ef-406c-b5d4-f23c2a721a62)
