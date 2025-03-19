@@ -82,7 +82,7 @@ pacman::p_load(devtools,usethis)
 
 ```{r}
 ### Install PCDLPicasso R package
-install_github("Sanghoon-Lee_NYULH/PCDLPicasso")
+install_github("sanghoonleeeins/PCDLPicasso")
 
 ### Load the R package. Note you DON'T need quotation. 
 ### The package name is PCDLPicasso, not Sanghoon-Lee_NYULH/PCDLPicasso
