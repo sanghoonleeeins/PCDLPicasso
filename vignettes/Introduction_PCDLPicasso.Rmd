@@ -1,0 +1,27 @@
+---
+title: "Introduction_PCDLPicasso"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction_PCDLPicasso}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+### Install PCDLPicasso R package
+ install_github("Sanghoon-Lee_NYULH/PCDLPicasso")
+
+ library(PCDLPicasso)
+```
+
+
+```{r ShinyApp}
+ shiny::shinyApp(ui=PCDD_UserInterface, server=PCDD_Server)
+```
