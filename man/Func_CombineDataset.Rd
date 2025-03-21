@@ -5,7 +5,7 @@
 \title{Title Func_CombineDataset}
 \usage{
 Func_CombineDataset(
-  MyDatasetName = "N19_dbMP",
+  MyDatasetName = "N10_WMMultiomeKatahdin",
   FirstDataset = "PatientDemography",
   SecondDataset = "SampleInformation"
 )
@@ -24,5 +24,5 @@ Joinned PatientDemography and SampleInformation
 Title Func_CombineDataset
 }
 \examples{
-Func_CombineDataset(MyDatasetName="N19_dbMP", FirstDataset="PatientDemography", SecondDataset="SampleInformation")
+Func_CombineDataset(MyDatasetName="N18_dbMP", FirstDataset="PatientDemography", SecondDataset="SampleInformation")
 }

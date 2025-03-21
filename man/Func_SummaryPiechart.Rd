@@ -4,7 +4,7 @@
 \alias{Func_SummaryPiechart}
 \title{Title Func_SummaryPiechart}
 \usage{
-Func_SummaryPiechart(MyDatasetName = "N19_dbMP", InterestDataType = "Race")
+Func_SummaryPiechart(MyDatasetName = "N18_dbMP", InterestDataType = "Race")
 }
 \arguments{
 \item{MyDatasetName}{DatasetName}
@@ -18,5 +18,5 @@ Piechart
 Title Func_SummaryPiechart
 }
 \examples{
-Func_SummaryPiechart(MyDatasetName="N19_dbMP",  InterestDataType="Race")
+Func_SummaryPiechart(MyDatasetName="N18_dbMP",  InterestDataType="Race")
 }

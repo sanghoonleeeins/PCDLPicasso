@@ -5,9 +5,9 @@
 \title{Title Func_ClinicalDataTable}
 \usage{
 Func_ClinicalDataTable(
-  MyDatasetName = "N19_dbMP",
+  MyDatasetName = "N10_WMMultiomeKatahdin",
   ClinicalDataType = "Race",
-  SubType = "Asian"
+  SubType = "White"
 )
 }
 \arguments{
@@ -24,5 +24,5 @@ CombinedData_BySubType
 Title Func_ClinicalDataTable
 }
 \examples{
-Func_ClinicalDataTable(MyDatasetName="N19_dbMP",  ClinicalDataType="Race",  SubType="Asian")
+Func_ClinicalDataTable(MyDatasetName="N18_dbMP",  ClinicalDataType="Race",  SubType="Asian")
 }
