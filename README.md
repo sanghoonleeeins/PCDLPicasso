@@ -18,27 +18,28 @@ The lab has so many sequencing datasets. So, we need a tool to navigate the data
 
 ### $List of Morgan-Davies lab datasets$ - These names will be revised by unique names.
 
-|  No.1 UK myeloma (463) exome data - Patrick\
-|  No.2 MGP data exomes and expression (1273) - Patrick\
-|  No.3 GEP datasets Little rock (?) - Patrick\
-|  No.4 SMM sequential WGS (Eileen)\
-|  No.5 WGS Ancestry/ncPaper (307-294) - Patrick\
-|  No.6 WGS next set - Sanghoon\
-|  No.7 COMMPASS low pass WGS (794?)\
-|  No.8 COMMPASS exomes\
-|  No.9 COMMPASS expression\
-|  No.10 WMMumtiome_Katahdin - Dylan\
-|  No.11 MM cell line ATAC, HiC - Patrick\
-|  No.12 PDX mice HiC, RNAseq, - Patrick\
-|  No.13 scATAC, scRNA, WGS (MM, SMM, MGUS) - Di\
-|  No.14 micropinocytosis resistant cells RNA - Dylan\
-|  No.15 NSD2 dTAG cut and tag; SLAMseq - Sanxiong\
-|  No.16 Cody structural paper - Patrick\
-|  No.17 Chromosome 1 paper Eileen - Patrick\
-|  No.18 dbMP - Patrick\
-|  No.19 External Datasets – Patrick\
-|  No.20 scDatasets – Dylan\
-|  No.21 Foundation 1 data/Caleb paper\
+|  No.1 UK myeloma (463) exome data - Patrick
+|  No.2 MGP data exomes and expression (1273) - Patrick
+|  No.3 GEP datasets Little rock (?) - Patrick
+|  No.4 SMM sequential WGS (Eileen)
+|  No.5 WGS Ancestry/ncPaper (307-294) - Patrick
+|  No.6 WGS next set - Sanghoon
+|  No.7 COMMPASS low pass WGS (794?)
+|  No.8 COMMPASS exomes
+|  No.9 COMMPASS expression
+|  No.10 scATAC, scRNAseq Waldenstrom (13) Dylan
+|  No.11 WGS Waldenstrom - Dylan
+|  No.12 MM cell line ATAC, HiC - Patrick
+|  No.13 PDX mice HiC, RNAseq, - Patrick
+|  No.14 scATAC, scRNA, WGS (MM, SMM, MGUS) - Di
+|  No.15 micropinocytosis resistant cells RNA - Dylan
+|  No.16 NSD2 dTAG cut and tag; SLAMseq - Sanxiong
+|  No.17 Cody structural paper - Patrick
+|  No.18 Chromosome 1 paper Eileen - Patrick
+|  No.19 dbMP - Patrick
+|  No.20 External Datasets – Patrick
+|  No.21 scDatasets – Dylan
+|  No.22 Foundation 1 data/Caleb paper
 
 ## B. Basic requirements
 
@@ -72,7 +73,7 @@ utils::install.packages(c("data.table","BiocManager","dplyr","stringr","tidyvers
 pacman::p_load(devtools,usethis)
 ```
 
-![image](https://github.com/user-attachments/assets/b01e6d03-491e-4a01-9eab-71c279c5c756)
+![image](https://github.com/user-attachments/assets/b7840876-3496-4305-962c-ae518ef2a705)
 
 
 ## C. Install PCDLPicasso R package
@@ -89,7 +90,6 @@ library(PCDLPicasso)
 ```
 
 If you get an error like this below, I can help you solve it.
-
 WARNING: Rtools is required to build R packages, but is not currently installed.
 
 ![image](https://github.com/user-attachments/assets/a621a1f0-aeca-4903-823f-b55abb1e0d2e)
@@ -105,6 +105,5 @@ In R console, run the command below.
 shiny::shinyApp(ui=PCDD_UserInterface, server=PCDD_Server)
 ```
 
-![image](https://github.com/user-attachments/assets/f56acbba-f7df-45a0-bbc5-ade6fe580acc)
-
+![image](https://github.com/user-attachments/assets/6844effa-6692-467a-b81e-dafda5923aff)
 ![image](https://github.com/user-attachments/assets/24e0ba4e-68ef-406c-b5d4-f23c2a721a62)

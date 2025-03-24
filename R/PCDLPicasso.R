@@ -47,48 +47,51 @@ Func_CombineDataset= function(MyDatasetName="N10_WMMultiomeKatahdin", FirstDatas
 #'
 #' @examples Func_ClinicalDataTable(MyDatasetName="N18_dbMP",  ClinicalDataType="Race",  SubType="Asian")
 Func_ClinicalDataTable = function(MyDatasetName="N10_WMMultiomeKatahdin",  ClinicalDataType="Race",  SubType="White") {
-  CombinedData_18_dbMP <- Func_CombineDataset(MyDatasetName, FirstDataset="PatientDemography", SecondDataset="SampleInformation")
-  dim(CombinedData_18_dbMP) # 427 12
-  ############# =============== ############## =====================
-  ### Check the proportion of Demography or Diagnosis: Race, Gender, Diagnosis.
-  ############# =============== ############## =====================
-  if (ClinicalDataType=="Sequence") {
-      CombinedData_18_dbMP_NoDup <- CombinedData_18_dbMP
-  } else if (ClinicalDataType!="Sequence") {
-      CombinedData_18_dbMP_NoDup <- CombinedData_18_dbMP[!duplicated(CombinedData_18_dbMP$PatientID),]
-      dim(CombinedData_18_dbMP_NoDup) # 244  12
-  }
-
-  if (ClinicalDataType %in% c("InstituteName", "Race","Gender","Diagnosis", "SampleType","Hyperdiploid","TumorTreatment",  "WM", "Sequence")) {
-    ## Change the column name by ClinicalDataType
-    colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)==ClinicalDataType] <- "InterestClinicalData"
-    ## Filter the table by SubType
-    if(SubType=="AllSubType") {
-      CombinedData_BySubType <- CombinedData_18_dbMP_NoDup
-    } else {
-      CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData==SubType); dim(CombinedData_BySubType)
-    }
-    ## Going back to the original column name
-    colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)=="InterestClinicalData"] <- ClinicalDataType
-    return(CombinedData_BySubType)
-  } else if (ClinicalDataType %in% c("Age")) {   # ClinicalDataType="Age"; SubType="LowerThan50";
-    ## Change the column name by ClinicalDataType
-    colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)==ClinicalDataType] <- "InterestClinicalData"
-    ## Filter the table by SubType
-    if(SubType=="AllSubType") {
-      CombinedData_BySubType <- CombinedData_18_dbMP_NoDup
-    } else if (SubType=="LowerThan50" ) {
-      CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData < 50); dim(CombinedData_BySubType) # 20 12
-    } else if (SubType=="HigherEqual50" ) {
-      CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData >= 50); dim(CombinedData_BySubType) # 224 12
-    } else if (SubType=="NotAvail" ) {
-      CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData==SubType); dim(CombinedData_BySubType) # 224 12
+    CombinedData_18_dbMP <- Func_CombineDataset(MyDatasetName, FirstDataset="PatientDemography", SecondDataset="SampleInformation")
+    dim(CombinedData_18_dbMP) # 427 12
+    ############# =============== ############## =====================
+    ### Check the proportion of Demography or Diagnosis: Race, Gender, Diagnosis.
+    ############# =============== ############## =====================
+    if (ClinicalDataType=="Sequence") {
+        CombinedData_18_dbMP_NoDup <- CombinedData_18_dbMP
+    } else if (ClinicalDataType!="Sequence") {
+        CombinedData_18_dbMP_NoDup <- CombinedData_18_dbMP[!duplicated(CombinedData_18_dbMP$PatientID),]
+        dim(CombinedData_18_dbMP_NoDup) # 244  12
     }
 
-    ## Going back to the original column name
-    colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)=="InterestClinicalData"] <- ClinicalDataType
-    return(CombinedData_BySubType)
-  }
+    if (ClinicalDataType %in% c("InstituteName", "Race","Gender","Diagnosis", "SampleType","Hyperdiploid","TumorTreatment",  "WM", "Sequence")) {
+
+        ## Filter the table by SubType
+        if(SubType=="AllSubType") {
+            CombinedData_BySubType <- CombinedData_18_dbMP_NoDup
+        } else {
+            ## Change the column name by ClinicalDataType
+            colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)==ClinicalDataType] <- "InterestClinicalData"
+            CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData==SubType); dim(CombinedData_BySubType)
+
+            ## Going back to the original column name
+            colnames(CombinedData_BySubType)[colnames(CombinedData_BySubType)=="InterestClinicalData"] <- ClinicalDataType
+        }
+
+        return(CombinedData_BySubType)
+    } else if (ClinicalDataType %in% c("Age")) {   # ClinicalDataType="Age"; SubType="LowerThan50";
+        ## Change the column name by ClinicalDataType
+        colnames(CombinedData_18_dbMP_NoDup)[colnames(CombinedData_18_dbMP_NoDup)==ClinicalDataType] <- "InterestClinicalData"
+        ## Filter the table by SubType
+        if(SubType=="AllSubType") {
+          CombinedData_BySubType <- CombinedData_18_dbMP_NoDup
+        } else if (SubType=="LowerThan50" ) {
+          CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData < 50); dim(CombinedData_BySubType) # 20 12
+        } else if (SubType=="HigherEqual50" ) {
+          CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData >= 50); dim(CombinedData_BySubType) # 224 12
+        } else if (SubType=="NotAvail" ) {
+          CombinedData_BySubType <- dplyr::filter(CombinedData_18_dbMP_NoDup, InterestClinicalData==SubType); dim(CombinedData_BySubType) # 224 12
+        }
+
+        ## Going back to the original column name
+        colnames(CombinedData_BySubType)[colnames(CombinedData_BySubType)=="InterestClinicalData"] <- ClinicalDataType
+        return(CombinedData_BySubType)
+    }
 }
 
 
@@ -202,8 +205,8 @@ PCDD_Server <- function(input, output) {
     ############# Clinical Subtype table ########################### $$$$$$$$$$$$$$$ ========================== $$$$$$$$$$$$$$$$$ ========================== $$$$$$$$$$$$$$$$$ ========================== $$$$$$$$$$$$$$$$$
     # ClinicalDataTable by InstituteName: "AllSubType", "NYU","UAB","UMiami","NotAvail"
     ClinicalTable_ByClinicalSubType_InstituteName <- shiny::eventReactive(input$ClinicalTable_InstituteName, {
-        if(req(input$ClinicalTable_InstituteName) %in% c("AllSubType","NYU","UAB","UMiami","NotAvail"  ) ) {
-          ClinicalData_SubtypeInstituteName <- Func_ClinicalDataTable(MyDatasetName=input$Dataset,  ClinicalDataType="InstituteName",  SubType=input$ClinicalTable_InstituteName)
+        if(req(input$ClinicalTable_InstituteName) %in% c("AllSubType","NYU","UAB","UMiami","Gustave_Roussy","NotAvail"  ) ) {
+            ClinicalData_SubtypeInstituteName <- Func_ClinicalDataTable(MyDatasetName=input$Dataset,  ClinicalDataType="InstituteName",  SubType=input$ClinicalTable_InstituteName)
         }
         return(ClinicalData_SubtypeInstituteName)
     })
@@ -287,7 +290,21 @@ PCDD_Server <- function(input, output) {
     })
 
     #### renderDataTable
-    if(req(input$ClinicalTable_InstituteName) %in% c("AllSubType", "NYU", "UAB","UMiami","NotAvail")) {
+    if(req(input$Dataset) %in% c("N06_RRPC49Elsa","N10_WMMultiomeKatahdin", "N18_dbMP")) {
+      output$outputtableInstituteName <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_InstituteName()    )
+      output$outputtableRace <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_Race()    )
+      output$outputtableRace <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_Race()    )
+      output$outputtableGender <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_Gender()    )
+      output$outputtableAge <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_Age()    )
+      output$outputtableDiagnosis <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_Diagnosis()    )
+      output$outputtableSampleType <- DT::renderDataTable(ClinicalTable_ByClinicalSubType_SampleType()    )
+      output$outputtableHypderdiploid <- DT::renderDataTable(ClinicalTable_ByClinicalSubType_Hyperdiploid()    )
+      output$outputtableTumorTreatment <- DT::renderDataTable(ClinicalTable_ByClinicalSubType_TumorTreatment()    )
+      output$outputtableWM <- DT::renderDataTable(ClinicalTable_ByClinicalSubType_WM()    )
+      output$outputtableSequence <- DT::renderDataTable(ClinicalTable_ByClinicalSubType_Sequence()    )
+    }
+
+    if(req(input$ClinicalTable_InstituteName) %in% c("AllSubType", "NYU", "UAB","UMiami","Gustave_Roussy","NotAvail")) {
       output$outputtableInstituteName <- DT::renderDataTable( ClinicalTable_ByClinicalSubType_InstituteName()    )
     }
     if(req(input$ClinicalTable_Race) %in% c("AllSubType", "Asian", "Black_or_African_American","Hispanic","White", "NotAvail")) {
