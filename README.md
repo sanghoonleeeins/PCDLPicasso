@@ -18,28 +18,27 @@ The lab has so many sequencing datasets. So, we need a tool to navigate the data
 
 ### $List of Morgan-Davies lab datasets$ - These names will be revised by unique names.
 
-|  No.1 UK myeloma (463) exome data - Patrick
-|  No.2 MGP data exomes and expression (1273) - Patrick
-|  No.3 GEP datasets Little rock (?) - Patrick
-|  No.4 SMM sequential WGS (Eileen)
-|  No.5 WGS Ancestry/ncPaper (307-294) - Patrick
-|  No.6 WGS next set - Sanghoon
-|  No.7 COMMPASS low pass WGS (794?)
-|  No.8 COMMPASS exomes
-|  No.9 COMMPASS expression
-|  No.10 scATAC, scRNAseq Waldenstrom (13) Dylan
-|  No.11 WGS Waldenstrom - Dylan
-|  No.12 MM cell line ATAC, HiC - Patrick
-|  No.13 PDX mice HiC, RNAseq, - Patrick
-|  No.14 scATAC, scRNA, WGS (MM, SMM, MGUS) - Di
-|  No.15 micropinocytosis resistant cells RNA - Dylan
-|  No.16 NSD2 dTAG cut and tag; SLAMseq - Sanxiong
-|  No.17 Cody structural paper - Patrick
-|  No.18 Chromosome 1 paper Eileen - Patrick
-|  No.19 dbMP - Patrick
-|  No.20 External Datasets – Patrick
-|  No.21 scDatasets – Dylan
-|  No.22 Foundation 1 data/Caleb paper
+|  No.1 UK myeloma (463) exome data - Patrick\
+|  No.2 MGP data exomes and expression (1273) - Patrick\
+|  No.3 GEP datasets Little rock (?) - Patrick\
+|  No.4 SMM sequential WGS (Eileen)\
+|  No.5 WGS Ancestry/ncPaper (307-294) - Patrick\
+|  No.6 RRPC49_Elsa - Sanghoon\
+|  No.7 COMMPASS low pass WGS (794?)\
+|  No.8 COMMPASS exomes\
+|  No.9 COMMPASS expression\
+|  No.10 WMMultiome_Katahdin - Dylan\
+|  No.11 MM cell line ATAC, HiC - Patrick\
+|  No.12 PDX mice HiC, RNAseq, - Patrick\
+|  No.13 scATAC, scRNA, WGS (MM, SMM, MGUS) - Di\
+|  No.14 micropinocytosis resistant cells RNA - Dylan\
+|  No.15 NSD2 dTAG cut and tag; SLAMseq - Sanxiong\
+|  No.16 Cody structural paper - Patrick\
+|  No.17 Chromosome 1 paper Eileen - Patrick\
+|  No.18 dbMP - Patrick\
+|  No.19 External Datasets – Patrick\
+|  No.20 scDatasets – Dylan\
+|  No.21 Foundation 1 data/Caleb paper\
 
 ## B. Basic requirements
 
