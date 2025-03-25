@@ -10,7 +10,7 @@ date: 2025-02-26
 
 This ShinyApp will help users search for available lab sequencing datasets and clinical data. Explore available lab seq datasets and count patient samples per clinical data type
 
-**Plasma Cell Disorder Library - Picasso** was built on R version 4.4.1 (2024-06-15) -- "**Race for Your Life**" This means you need to install R version \>= 4.4.1
+**Plasma Cell Disorder Library - Picasso** was built on R version 4.4.1 (2024-06-15) -- "**Race for Your Life**" This means you need to install R version \>= 4.4.3
 
 ## A. Introduction
 
